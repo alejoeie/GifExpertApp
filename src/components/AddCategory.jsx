@@ -11,13 +11,14 @@ export const AddCategory = ({onNewCategory}) => {
     }
 
     const onSubmit = (event) => {
+        console.log("Hello world from the very submit");
         event.preventDefault();
         if (inputValue.trim().length <=1 ) return;
         onNewCategory( inputValue.trim() );
         setinputValue('');
     }
     return (
-        <form onSubmit={ (event) => {onSubmit(event)}}>
+        <form onSubmit={ (event) => {onSubmit(event)}} aria-label="form">
             <input 
             type="text"
             placeholder="Buscar gifs, ej: Dragon Ball"
